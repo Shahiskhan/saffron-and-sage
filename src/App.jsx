@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/sections/Hero";
+import FeaturedDishes from "./components/sections/FeaturedDishes";
 
 const Placeholder = ({ title }) => (
   <div className="max-w-7xl mx-auto px-6 py-20">
@@ -13,7 +14,15 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <FeaturedDishes />
+            </>
+          }
+        />
         <Route path="/menu" element={<Placeholder title="Menu" />} />
         <Route path="/reservation" element={<Placeholder title="Reservation" />} />
         <Route path="/about" element={<Placeholder title="About" />} />
